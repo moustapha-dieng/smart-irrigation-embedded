@@ -1,96 +1,86 @@
-\# Smart Irrigation Embedded System 🌱💧
+# 🌱 Smart Irrigation System – Embedded Project
 
+## 📌 Overview
+This project is a **smart irrigation system** developed using an **Arduino microcontroller** and a **soil moisture sensor**.  
+The system automatically controls a **water pump** based on real-time soil humidity measurements, optimizing water usage.
 
+This project was designed and implemented as a **personal embedded systems project**, with a focus on:
+- modular C/C++ architecture
+- hardware–software interaction
+- clean documentation and version control
 
-\## 📌 Overview
+---
 
-This project consists of the design and implementation of a smart irrigation system based on an embedded microcontroller (Arduino).  
+## 🎯 Project Objectives
+- Measure soil moisture in real time
+- Automatically activate irrigation when soil is dry
+- Stop irrigation when sufficient humidity is detected
+- Build a modular and scalable embedded architecture
+- Practice professional tools (Git, GitHub, documentation)
 
-The system automatically controls water irrigation depending on soil moisture levels, using a sensor, a relay module, and a water pump.
+---
 
+## 🧠 System Architecture
 
+### Hardware Components
+- Arduino (Uno / compatible)
+- Soil moisture sensor (analog)
+- Relay module
+- DC water pump
+- External power supply (battery pack)
+- Status LED
+- Connecting wires and tubing
 
-The goal of this project is to demonstrate fundamental concepts of embedded systems, including sensor acquisition, decision logic, and actuator control.
-
+### Software Architecture
+The code is structured in a **modular way**:
 
 
 ---
 
-
-
-\## 🎯 Objectives
-
-\- Measure soil moisture using an analog sensor  
-
-\- Automatically decide when irrigation is needed  
-
-\- Control a water pump through a relay module  
-
-\- Structure the software using modular Embedded C/C++  
-
-\- Validate the system through real hardware tests  
-
-
+## ⚙️ How It Works
+1. The soil moisture sensor provides an **analog value**.
+2. The Arduino reads and compares the value to a **threshold**.
+3. If the soil is **too dry**:
+   - The LED turns ON
+   - The relay activates the water pump
+4. If the soil is **sufficiently wet**:
+   - The LED turns OFF
+   - The pump stops
 
 ---
 
-
-
-\## 🧠 System Architecture
-
-The system follows a simple control loop:
-
-
-
-1\. The soil moisture sensor measures the humidity level
-
-2\. The microcontroller reads the analog value
-
-3\. A threshold-based decision is applied
-
-4\. The system activates or deactivates:
-
-&nbsp;  - an LED (status indicator)
-
-&nbsp;  - a water pump (via relay)
-
-
-
-This architecture reflects a basic \*\*sense → decide → act\*\* embedded system.
-
-
+## 🧪 Testing
+- Sensor values were monitored via the **Serial Monitor**
+- System behavior was validated by placing the sensor in:
+  - dry soil
+  - water
+- Relay and pump activation were tested independently before full integration
 
 ---
 
-
-
-\## 🧩 Hardware Components
-
-\- \*\*Arduino Uno\*\* – Main microcontroller
-
-\- \*\*Soil Moisture Sensor\*\* – Measures soil humidity
-
-\- \*\*Relay Module (5V)\*\* – Isolates and controls the pump
-
-\- \*\*DC Water Pump\*\* – Provides irrigation
-
-\- \*\*External Battery Pack\*\* – Powers the pump
-
-\- \*\*LED + Resistor\*\* – Visual status indicator
-
-\- \*\*Jumper Wires \& Tubing\*\*
-
-
+## 📷 Project Media
+Photos and videos of the setup and tests are available in the `media/` folder.
 
 ---
 
+## 🛠 Tools & Technologies
+- Arduino IDE
+- C / C++
+- VS Code
+- Git & GitHub
+- Basic electronics (relay, sensors, actuators)
 
+---
 
-\## 💻 Software Architecture
+## 🚀 Future Improvements
+- Use ESP32 with Wi-Fi
+- Add mobile/web dashboard
+- Weather-based irrigation logic
+- Low-power optimization
+- Enclosure and outdoor deployment
 
-The software is written in Embedded C/C++ and organized in a modular way:
+---
 
-
-
-
-
+## 👨‍🎓 Author
+**Moustapha Dieng**  
+Embedded Systems / Engineering Student.
