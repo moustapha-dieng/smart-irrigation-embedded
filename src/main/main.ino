@@ -2,7 +2,8 @@
 #include "sensor.h"
 #include "actuator.h"
 
-#define HUMIDITY_THRESHOLD 700  // seuil calibré selon tes tests
+const int HUMIDITY_THRESHOLD = 700;        // Seuil à ajuster selon le capteur et le sol.
+const unsigned long READ_INTERVAL_MS = 1000;
 
 void setup() {
     Serial.begin(9600);
@@ -12,16 +13,16 @@ void setup() {
 
 void loop() {
     int humidity = sensor_read();
+    Serial.print("Soil moisture: ");
     Serial.println(humidity);
 
     if (humidity > HUMIDITY_THRESHOLD) {
-    led_on();
-    pump_on();
-} else {
-    led_off();
-    pump_off();
-}
+        led_on();
+        pump_on();
+    } else {
+        led_off();
+        pump_off();
+    }
 
-
-    delay(1000); // lire toutes les secondes
+    delay(READ_INTERVAL_MS);
 }

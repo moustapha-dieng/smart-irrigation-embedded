@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include "sensor.h"
 
-#define SENSOR_PIN A0
+const int SENSOR_PIN = A0;
 
 void sensor_init(void) {
+    pinMode(SENSOR_PIN, INPUT);
 }
 
 int sensor_read(void) {
